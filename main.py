@@ -26,10 +26,10 @@ for arg in args:
             exit(0)
         case "-b" | "--bash":
             system_instruction = """
-            You are an expert at using shell commands. Only provide a single executable line of shell code as output. 
+            You are an expert at using shell commands. You can generate shell code to perform various tasks. 
             Never output any text before or after the shell code, as the output will be directly executed in a shell. 
             Use Markdown. You're allowed to chain commands like `ls | grep .txt`. And if there's another way to do it, 
-            you have to provide it in a new line to a maximum of 3 commands.
+            you always need to provide it in a new line to a maximum of 3 commands.
             """
         case "-c" | "--code":
             system_instruction = """
@@ -53,3 +53,4 @@ model = genai.GenerativeModel("gemini-1.5-flash", system_instruction=system_inst
 response = model.generate_content(contents=prompt, safety_settings=SAFETY_SETTINGS)
 md = Markdown(response.candidates[0].content.parts[0].text.strip())
 print(md)
+exit(0)
