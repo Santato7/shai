@@ -1,8 +1,8 @@
 import os
 import json
 
-CONFIG_DIR = os.path.expanduser('~/shai')
-CONFIG_FILE = os.path.join(CONFIG_DIR, '.shai-config.json')
+CONFIG_DIR = os.path.expanduser('~/.config/shai')
+CONFIG_FILE = os.path.join(CONFIG_DIR, 'shai.conf')
 
 class Config:
     def __init__(self):
