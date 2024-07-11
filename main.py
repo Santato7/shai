@@ -3,13 +3,18 @@ import google.generativeai as genai
 from config import Config
 
 if len(sys.argv) < 2:
-    print("Usage: python main.py [options] <prompt>")
+    print("Usage: shai [options] <prompt>")
     exit(1)
-args = sys.argv[1:-1]
+args = sys.argv
 prompt = sys.argv[len(sys.argv) - 1]
 
-if prompt.startswith('-'):
-    prompt = None
+for arg in args:
+    match arg:
+        case '-h' | '--help':
+            print("Usage: shai [options] <prompt>")
+            print("Options:")
+            print("-h: Show this help message")
+            exit(0)
 
 config = Config()
 API_KEY = config.get_api_key()
