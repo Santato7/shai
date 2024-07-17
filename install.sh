@@ -13,7 +13,7 @@ echo "Creating virtual environment..."
 python3 -m venv ~/.shai/venv > /dev/null 2>&1
 
 echo "Activating virtual environment..."
-source ~/.shai/venv/bin/activate > /dev/null 2>&1
+source ~/.shai/venv/bin/activate > /dev/null
 
 echo "Installing dependencies..."
 pip install -r ~/.shai/requirements.txt --quiet
@@ -21,7 +21,7 @@ pip install -r ~/.shai/requirements.txt --quiet
 echo '#!/bin/bash' > ~/.shai/shai
 echo '~/.shai/venv/bin/python3 ~/.shai/src/main.py "$@"' >> ~/.shai/shai
 
-deactivate > /dev/null 2>&1
+deactivate > /dev/null
 
 chmod +x ~/.shai/shai > /dev/null 2>&1
 sudo ln -s ~/.shai/shai /usr/local/bin/shai > /dev/null 2>&1
