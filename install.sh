@@ -4,7 +4,7 @@ sudo -v
 
 echo "Installing the shai tool..."
 
-mkdir -p ~/.shai
+mkdir ~/.shai
 
 echo "Downloading the repository..."
 git clone https://github.com/santato7/shai.git ~/.shai/ > /dev/null 2>&1
@@ -16,7 +16,7 @@ echo "Activating virtual environment..."
 source ~/.shai/venv/bin/activate > /dev/null 2>&1
 
 echo "Installing dependencies..."
-pip install -r ~/.shai/requirements.txt > /dev/null 2>&1
+pip install -r ~/.shai/requirements.txt --quiet
 
 echo '#!/bin/bash' > ~/.shai/shai
 echo '~/.shai/venv/bin/python3 ~/.shai/src/main.py "$@"' >> ~/.shai/shai
