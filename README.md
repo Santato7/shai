@@ -13,7 +13,7 @@
 ### Linux
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/santato7/shai/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/santato7/shai/main/install.sh | bash
 ```
 
 ## Uso
