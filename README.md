@@ -28,7 +28,13 @@ shai [options] <prompt>
 - `-b` ou `--bash`: Gerar comandos Bash.
 - `-c` ou `--code`: Gerar código em várias linguagens de programação.
 
+Se nenhum argumento de opção for passado, **shai** atua como um "assistente geral".
+
 ## Exemplo
+
+```sh
+shai "Como fazer um bolo?"
+```
 
 ```sh
 shai -c "Como criar uma função em Python que soma dois números?"
@@ -36,6 +42,6 @@ shai -c "Como criar uma função em Python que soma dois números?"
 
 ## Configuração
 
-shai requer uma chave de API do Google Gemini para funcionar. Durante a instalação, você será solicitado a inserir sua chave de API. A chave será armazenada em um arquivo de configuração localizado em `~/.config/shai/shai.conf`.
+**shai** requer uma chave de API do Google Gemini para funcionar. Durante a instalação, você será solicitado a inserir sua chave de API. A chave será armazenada em um arquivo de configuração localizado em `~/.config/shai/shai.conf`.
 
 Para obter sua chave de API do Gemini, acesse [Google Gemini API](https://developers.generativeai.google/documentation) e siga as instruções para criar uma chave de API.
