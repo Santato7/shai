@@ -1,16 +1,23 @@
 from rich import print
+from rich.markup import escape
 from rich.markdown import Markdown
 import sys
 import google.generativeai as genai
 from config import Config
 
+
 def print_help():
-    print("Usage: shai [options] <prompt>")
-    print("Options:")
-    print("-h | --help: Show this help message")
-    print("-b | --bash: Generate a bash command")
-    print("-c | --code: Generate code in multiple programming languages")
+    print(
+        f"[on black][bold magenta]Usage:[/bold magenta] [bold cyan]shai[/bold cyan] [bold green]{escape('[options]')}[/bold green] [bold blue]<prompt>[/bold blue]"
+    )
+    print("[on black][bold magenta]Options:[/bold magenta]")
+    print("[on black][bold green]-h | --help[/bold green]: Show this help message")
+    print("[on black][bold green]-b | --bash[/bold green]: Generate a bash command")
+    print(
+        "[on black][bold green]-c | --code[/bold green]: Generate code in multiple programming languages"
+    )
     exit(0)
+
 
 if len(sys.argv) < 2:
     print_help()
