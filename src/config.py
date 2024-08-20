@@ -13,7 +13,7 @@ class Config:
 
     def create_config(self):
         if not os.path.exists(CONFIG_DIR):
-            os.mkdir(CONFIG_DIR)
+            os.makedirs(CONFIG_DIR)
         API_KEY = getpass("Enter your Google Gemini API key: ")
         config_data = {"api_key": API_KEY}
         with open(CONFIG_FILE, "w") as f:
